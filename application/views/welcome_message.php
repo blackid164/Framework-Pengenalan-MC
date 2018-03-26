@@ -76,11 +76,13 @@
             <img src="img/1.jpg" class="img-responsive" alt="">
             <div class="carousel-caption">
               <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
-                <h2><span>Clean & Modern Design Template</span></h2>
+                <h2><span>Politeknik Negeri Malang</span></h2>
               </div>
               <div class="col-md-10 col-md-offset-1">
                 <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+                  <p>Jl. Soekarno Hatta No. 9 Malang
+					Telp : (0341) 404424, 404425
+					Fax : (0341) 404420</p>
                 </div>
               </div>
               <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">
@@ -144,7 +146,7 @@
             <div class="title">
               <div class="wow bounceIn">
 
-                <h2 class="section-heading animated" data-animation="bounceInUp">Our Company</h2>
+                <h2 class="section-heading animated" data-animation="bounceInUp">POLITEKNIK NEGERI MALANG</h2>
 
 
               </div>
