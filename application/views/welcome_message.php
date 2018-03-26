@@ -86,10 +86,10 @@
               <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">
                 <form class="form-inline">
                   <div class="form-group">
-                    <button type="livedemo" name="Live Demo" class="btn btn-primary btn-lg" required="required">Akademik</button>
+                    <button type="akademik" name="Akademik" class="btn btn-primary btn-lg" required="required">Akademik</button>
                   </div>
                   <div class="form-group">
-                    <button type="getnow" name="Get Now" class="btn btn-primary btn-lg" required="required">Jurusan</button>
+                    <button type="jurusan" name="Jurusan" class="btn btn-primary btn-lg" required="required">Jurusan</button>
                   </div>
                 </form>
               </div>
@@ -138,9 +138,9 @@
                   <ul>
 
                     <div class="slide-body" data-group="slide">
-                      <li><img alt="" class="img-responsive" src="img/9.jpg" width="100%" height="350" /></li>
-                      <li><img alt="" class="img-responsive" src="img/10.jpg" width="100%" height="350" /></li>
-                      <li><img alt="" class="img-responsive" src="img/11.jpg" width="100%" height="350" /></li>
+                      <li><img alt="" class="img-responsive" src="assets/img/9.jpg" width="100%" height="350" /></li>
+                      <li><img alt="" class="img-responsive" src="assets/img/10.jpg" width="100%" height="350" /></li>
+                      <li><img alt="" class="img-responsive" src="assets/img/11.jpg" width="100%" height="350" /></li>
 
                     </div>
                   </ul>
