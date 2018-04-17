@@ -1,13 +1,7 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js">
-<!--<![endif]-->
 
 <head>
-  <!-- BASICS -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Pemrograman Web Framework</title>
@@ -22,18 +16,10 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-  <!-- skin -->
   <link rel="stylesheet" href="assets/skin/default.css">
-  <!-- =======================================================
-    Theme Name: Green
-    Theme URL: https://bootstrapmade.com/green-free-one-page-bootstrap-template/
-    Author: BootstrapMade
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
 </head>
 
 <body>
-
 
   <div class="header">
     <section id="header" class="appear">
@@ -52,69 +38,50 @@
             <li class="active"><a href="http://localhost/Framework-Pengenalan-MC/">Home</a></li>
             <li><a href="http://localhost/Framework-Pengenalan-MC/Page">About</a></li>
             <li><a href="http://localhost/Framework-Pengenalan-MC/Blog">Blog</a></li>
+            <li><a href="http://localhost/Framework-Pengenalan-MC/Crud">Edit Artikel</a></li>
           </ul>
         </div>
-        <!--/.navbar-collapse -->
       </div>
-
-
     </section>
   </div>
 
 
-  <div class="slider">
-    <div id="about-slider">
-      <div id="carousel-slider" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators visible-xs">
-          <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
-        </ol>
-
-        <div class="carousel-inner">
-          <div class="item active">
-            <img src="assets/img/1.jpg" class="img-responsive" alt="">
-            <div class="carousel-caption">
-              <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
-                <h2><span>Politeknik Negeri Malang</span></h2>
-              </div>
-              <div class="col-md-10 col-md-offset-1">
-                <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
-                  <p>Jl. Soekarno Hatta No. 9 Malang
-					Telp : (0341) 404424, 404425
-					Fax : (0341) 404420</p>
-                </div>
-              </div>
-              <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">
-                <form class="form-inline">
-                  <div class="form-group">
-                    <button type="akademik" name="Akademik" class="btn btn-primary btn-lg" required="required">Akademik</button>
+  
+<section id="viewblog">
+  <div class="container">
+    <div class="blog">
+      <div class="row mar-bot40">
+        
+          <div class="title">
+            <div class="container">
+              <?php foreach($query as $data_row)
+                { ?>
+                  <div class="col-lg-4 col-sm-6 portfolio-item">
+                    <input type="hidden" class="form-control" placeholder="Group ID" name="id_blog">
+                      <div class="card h-100">
+                        <a href="#"><img style='width:350px;height:250px' class="card-img-top" src="<?php echo base_url().'assets/img/'?><?php echo $data_row->images; ?>" alt=""></a>
+                          <div class="card-body">
+                            <h3 class="card-title">
+                              <?php echo $data_row->judul;?>
+                            </h3>
+                              <p class="text-justify"><b>Posted on</b> <?php echo $data_row->tgl_posting; ?></p>
+                              <p class="card-text">
+                              <?php echo $data_row->konten;?>
+                              </p>
+                          </div>
+                      </div>
                   </div>
-                  <div class="form-group">
-                    <button type="jurusan" name="Jurusan" class="btn btn-primary btn-lg" required="required">Jurusan</button>
-                  </div>
-                </form>
-              </div>
+                <?php 
+              } ?>
             </div>
           </div>
 
-          
-        </div>
-
-        <a class="left carousel-control hidden-xs" href="#carousel-slider" data-slide="prev">
-          <i class="fa fa-angle-left"></i>
-        </a>
-
-        <a class=" right carousel-control hidden-xs" href="#carousel-slider" data-slide="next">
-          <i class="fa fa-angle-right"></i>
-        </a>
       </div>
-      <!--/#carousel-slider-->
     </div>
-    <!--/#about-slider-->
   </div>
-  <!--/#slider-->
+</section>
 
-  
+
 
   <a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>
 

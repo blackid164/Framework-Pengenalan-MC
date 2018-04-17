@@ -1,13 +1,7 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js">
-<!--<![endif]-->
 
 <head>
-  <!-- BASICS -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Pemrograman Web Framework</title>
@@ -22,18 +16,10 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-  <!-- skin -->
   <link rel="stylesheet" href="assets/skin/default.css">
-  <!-- =======================================================
-    Theme Name: Green
-    Theme URL: https://bootstrapmade.com/green-free-one-page-bootstrap-template/
-    Author: BootstrapMade
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
 </head>
 
 <body>
-
 
   <div class="header">
     <section id="header" class="appear">
@@ -54,67 +40,66 @@
             <li><a href="http://localhost/Framework-Pengenalan-MC/Blog">Blog</a></li>
           </ul>
         </div>
-        <!--/.navbar-collapse -->
       </div>
-
-
     </section>
   </div>
 
 
-  <div class="slider">
-    <div id="about-slider">
-      <div id="carousel-slider" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators visible-xs">
-          <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
-        </ol>
+<section id="viewcrud">
+  <div class="container">
+    <div class="crud">
+      <div class="row mar-bot40">
 
-        <div class="carousel-inner">
-          <div class="item active">
-            <img src="assets/img/1.jpg" class="img-responsive" alt="">
-            <div class="carousel-caption">
-              <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
-                <h2><span>Politeknik Negeri Malang</span></h2>
-              </div>
-              <div class="col-md-10 col-md-offset-1">
-                <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
-                  <p>Jl. Soekarno Hatta No. 9 Malang
-					Telp : (0341) 404424, 404425
-					Fax : (0341) 404420</p>
-                </div>
-              </div>
-              <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">
-                <form class="form-inline">
-                  <div class="form-group">
-                    <button type="akademik" name="Akademik" class="btn btn-primary btn-lg" required="required">Akademik</button>
-                  </div>
-                  <div class="form-group">
-                    <button type="jurusan" name="Jurusan" class="btn btn-primary btn-lg" required="required">Jurusan</button>
-                  </div>
-                </form>
-              </div>
+          <div class="title">
+            <div class="container">
+              <h3><span class="fa fa-star"></span>  Data Artikel <span class="fa fa-star"></span></h3>          
+              <a style=" margin-bottom:20px" href="crud/tambah" class="btn btn-info col-md-2 test"><span class="fa fa-plus"> Tambah Artikel</span></a>    
+              <br/>
+              <br/>
             </div>
           </div>
 
-          
-        </div>
-
-        <a class="left carousel-control hidden-xs" href="#carousel-slider" data-slide="prev">
-          <i class="fa fa-angle-left"></i>
-        </a>
-
-        <a class=" right carousel-control hidden-xs" href="#carousel-slider" data-slide="next">
-          <i class="fa fa-angle-right"></i>
-        </a>
-      </div>
-      <!--/#carousel-slider-->
+      </div> 
+      
+        <table class="table table-hover" >
+          <tr align="justify">
+            <th class="col-md-0">Nomor</th>
+            <th class="col-md-0">Id Artikel</th>
+            <th class="col-md-0">Judul</th>
+            <th class="col-md-0">Konten/Deskripsi</th>
+            <th class="col-md-0">Gambar</th>
+            <th class="col-md-0">Tanggal Posting</th>
+            <th class="col-md-0">Pilihan</th>
+          </tr>
+          <?php 
+            $no=1;
+            foreach($query as $b)
+            {
+          ?>
+          <tr align="justify">
+            <td><?php echo $no++ ?></td>
+            <td><?php echo $b->id_blog; ?></td>
+            <td><?php echo $b->judul; ?></td>
+            <td><?php echo substr($b->konten, 0, 20) . '...'; ?></td>
+            <td><img style='width:100px;height:150px' src="<?php echo base_url().'assets/image/'?><?php echo $b->images; ?>"></td>
+            <td><?php echo $b->tgl_posting; ?></td>
+            <td>
+            <a href="crud/edit/<?php echo $b->id_blog; ?>"  class="btn btn-primary">
+              <span class="fa fa-edit">  Edit</span>
+            </a>
+            <a href="<?php echo base_url()."index.php/crud/hapus/".$b->id_blog ?> " onClick="return confirm('Apakah anda yakin ingin menghapus konten ini?')"  class="btn btn-danger">
+              <span class="fa fa-trash">  Hapus</span>
+            </a>
+            </td>
+          </tr>   
+          <?php 
+            }
+          ?>
+        </table>
     </div>
-    <!--/#about-slider-->
   </div>
-  <!--/#slider-->
+</section>
 
-  
 
   <a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>
 
