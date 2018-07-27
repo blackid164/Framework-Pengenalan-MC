@@ -75,22 +75,20 @@
             <img src="assets/img/1.jpg" class="img-responsive" alt="">
             <div class="carousel-caption">
               <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
-                <h2><span>Politeknik Negeri Malang</span></h2>
+                <h2><span>INFO GAME</span></h2>
               </div>
               <div class="col-md-10 col-md-offset-1">
                 <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
-                  <p>Jl. Soekarno Hatta No. 9 Malang
-					Telp : (0341) 404424, 404425
-					Fax : (0341) 404420</p>
+                  <p>Update setiap saat, setiap waktu dan setiap kali sempat mengupdate!</p>
                 </div>
               </div>
               <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">
                 <form class="form-inline">
                   <div class="form-group">
-                    <button type="akademik" name="Akademik" class="btn btn-primary btn-lg" required="required">Akademik</button>
+                    <button type="akademik" name="Akademik" class="btn btn-primary btn-lg" required="required">GLHF</button>
                   </div>
                   <div class="form-group">
-                    <button type="jurusan" name="Jurusan" class="btn btn-primary btn-lg" required="required">Jurusan</button>
+                    <button type="jurusan" name="Jurusan" class="btn btn-primary btn-lg" required="required">QMAC</button>
                   </div>
                 </form>
               </div>
@@ -98,16 +96,6 @@
           </div>
 
           
-        </div>
-
-        <a class="left carousel-control hidden-xs" href="#carousel-slider" data-slide="prev">
-          <i class="fa fa-angle-left"></i>
-        </a>
-
-        <a class=" right carousel-control hidden-xs" href="#carousel-slider" data-slide="next">
-          <i class="fa fa-angle-right"></i>
-        </a>
-      </div>
       <!--/#carousel-slider-->
     </div>
     <!--/#about-slider-->
