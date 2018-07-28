@@ -11,7 +11,9 @@ class Registrasi extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('registrasi');		
+		$this->load->view('template/header');
+		$this->load->view('registrasi');
+		$this->load->view('template/footer');		
 	}
 
 	public function insert()
@@ -52,7 +54,9 @@ class Registrasi extends CI_Controller {
 
 		if ($this->form_validation->run() === FALSE)
 	    {
+	    	$this->load->view('template/header');
 	        $this->load->view('registrasi');
+	        $this->load->view('template/footer');
 	    } else {
 	    	$enc_password = md5($this->input->post('password'));
 			if ($this->input->post('submit')) {
@@ -61,7 +65,9 @@ class Registrasi extends CI_Controller {
 				$this->registrasiModel->insert_user_level($id_user[0]->id);
 				redirect('registrasi');
 			}
+			$this->load->view('template/header');
 			$this->load->view('registrasi');
+			$this->load->view('template/footer');
 	    }
 	}
 

@@ -11,7 +11,9 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('login');		
+		$this->load->view('template/header');
+		$this->load->view('login');
+		$this->load->view('template/footer');
 	}
 
 	public function login()
@@ -26,7 +28,9 @@ class Login extends CI_Controller {
 			));
 
 		if ($this->form_validation->run() === FALSE) {
+			$this->load->view('template/header');
 			$this->load->view('login');
+			$this->load->view('template/footer');
 		} else {
 			$username = $this->input->post('username');
 			$password = md5($this->input->post('password'));

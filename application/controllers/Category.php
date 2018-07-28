@@ -16,7 +16,9 @@ class Category extends CI_Controller {
 	public function index()
 	{
 		$data['categories'] = $this->categoryModel->get_all_categories();
+		$this->load->view('template/header');
 		$this->load->view('select_category', $data);
+		$this->load->view('template/footer');
 	}
 
 	public function tambah()
@@ -35,14 +37,17 @@ class Category extends CI_Controller {
 
 		if ($this->form_validation->run() === FALSE)
 	    {
+	    	$this->load->view('template/header');
 	        $this->load->view('insert_category');
+	        $this->load->view('template/footer');
 	    } else {
 			if ($this->input->post('simpan')) {
 				$this->categoryModel->tambah();
 				redirect('category');
 			}
-
+			$this->load->view('template/header');
 			$this->load->view('insert_category');
+			$this->load->view('template/footer');
 		}
 	}
 
@@ -53,8 +58,9 @@ class Category extends CI_Controller {
 			$this->categoryModel->update($id);
 			redirect('category');
 		}
-
+		$this->load->view('template/header');
 		$this->load->view('update_category', $data);
+		$this->load->view('template/footer');
 	}
 
 	public function delete_category($id_category)

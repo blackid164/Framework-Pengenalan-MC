@@ -12,7 +12,9 @@ class User extends CI_Controller {
 	public function index()
 	{
 		$data['user'] = $this->UserModel->get_user();
+		$this->load->view('template/header');
 		$this->load->view('tampil_user', $data);
+		$this->load->view('template/footer');
 	}
 
 	public function update_user($id_user)
@@ -39,7 +41,9 @@ class User extends CI_Controller {
 		$data['single_user'] = $this->UserModel->get_single_user($id_user);
 		if ($this->form_validation->run() === FALSE)
 	    {
-			$this->load->view('update_user', $data);	    	
+	    	$this->load->view('template/header');
+			$this->load->view('update_user', $data);	
+			$this->load->view('template/footer');    	
 	    } else {
 			if ($this->input->post('update')) {
 				$this->UserModel->update($id_user);
@@ -69,7 +73,9 @@ class User extends CI_Controller {
 			$this->session->set_flashdata('updated', 'Password anda berhasil diubah!');
 			redirect('blog');
 		}
+		$this->load->view('template/header');
 		$this->load->view('ganti_password');
+		$this->load->view('template/footer');
 	}
 
 }

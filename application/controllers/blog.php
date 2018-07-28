@@ -19,9 +19,9 @@ class Blog extends CI_Controller {
 		$this->load->model('data_artikel');
 		$limit_per_page = 3;
 		$start_index = ( $this->uri->segment(3) ) ? $this->uri->segment(3) : 0;
-		$total_records = $this->artikel->get_total();
+		$total_records = $this->data_artikel->get_total();
 		if ($total_records > 0) {
-			$data['data_artikel'] = $this->artikel->get_artikels($limit_per_page, $start_index);
+			$data['data_artikel'] = $this->data_artikel->get_artikels($limit_per_page, $start_index);
 
 			$config['base_url'] = base_url() . 'blog/index';
 			$config['total_rows'] = $total_records;
@@ -32,7 +32,9 @@ class Blog extends CI_Controller {
 			
 			$data['links'] = $this->pagination->create_links();
 		}
+		$this->load->view('template/header');
 		$this->load->view('home_view', $data);
+		$this->load->view('template/footer');
 	}
 
 	public function detail($id_blog)
@@ -43,7 +45,9 @@ class Blog extends CI_Controller {
 		}
 		$this->load->model('data_artikel');
 		$data['detail'] = $this->artikel->get_single($id);
+		$this->load->view('template/header');
 		$this->load->view('home_detail', $data);
+		$this->load->view('template/footer');
 	}
 
 	public function tambah()
@@ -99,7 +103,9 @@ class Blog extends CI_Controller {
 
 		if ($this->form_validation->run() === FALSE)
 	    {
+	    	$this->load->view('template/header');
 	        $this->load->view('insert_blog', $data);
+	        $this->load->view('template/footer');
 	    } else {
 
 
@@ -113,7 +119,9 @@ class Blog extends CI_Controller {
 					$data['message'] = $upload['error'];
 				}
 			}
+			$this->load->view('template/header');
 			$this->load->view('insert_blog', $data);
+			$this->load->view('template/footer');
 	    }
 			
 	}
@@ -132,7 +140,9 @@ class Blog extends CI_Controller {
 			redirect('blog');
 		}
 
+		$this->load->view('template/header');
 		$this->load->view('update_blog', $data);
+		$this->load->view('template/footer');
 	}
 
 	public function delete($id_blog)
@@ -150,7 +160,9 @@ class Blog extends CI_Controller {
 	{
 		$this->load->model('data_artikel');
 		$data['blog'] = $this->artikel->get_all_blogs();
+		$this->load->view('template/header');
 		$this->load->view('tampil_all_blog', $data);
+		$this->load->view('template/footer');
 	}
 
 
